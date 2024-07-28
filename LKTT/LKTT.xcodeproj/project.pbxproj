@@ -15,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A999F142C5653DD00E9F408 /* dl-use-cases */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-use-cases"; sourceTree = "<group>"; };
 		3AADCB472C56510900666193 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AADCB4A2C56510A00666193 /* AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppApp.swift; sourceTree = "<group>"; };
 		3AADCB4C2C56510A00666193 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		3AADCB5A2C56520200666193 /* DLPackages */ = {
 			isa = PBXGroup;
 			children = (
+				3A999F142C5653DD00E9F408 /* dl-use-cases */,
 				3AADCB682C56528300666193 /* dl-entities */,
 			);
 			path = DLPackages;
