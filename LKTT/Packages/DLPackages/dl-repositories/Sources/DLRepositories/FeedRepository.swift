@@ -49,3 +49,16 @@ private extension FeedRepository {
 		)
 	}
 }
+
+enum FeedDataProviderDependencyKey: DependencyKey {
+	public static var liveValue: any PFeedDataProvider {
+		FeedRepository()
+	}
+}
+
+public extension DependencyValues {
+	var feedDataProvider: any PFeedDataProvider {
+		get { self[FeedDataProviderDependencyKey.self] }
+		set { self[FeedDataProviderDependencyKey.self] = newValue }
+	}
+}

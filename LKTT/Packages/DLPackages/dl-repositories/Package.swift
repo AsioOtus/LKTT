@@ -14,11 +14,17 @@ let package = Package(
 			targets: [
 				"DLRepositories"
 			]
-		)
+		),
+		.library(
+			name: "DLRepositoriesMocks",
+			targets: [
+				"DLRepositoriesMocks"
+			]
+		),
 	],
 	dependencies: [
 		.package(path: "../dl-entities"),
-		.package(path: "../dl-use-cases"),
+		.package(path: "../dl-use-cases-protocols"),
 
 		.package(url: "https://github.com/AsioOtus/network-util", from: "1.0.0"),
 		.package(url: "https://github.com/pointfreeco/swift-dependencies", exact: "1.3.0"),
@@ -30,7 +36,19 @@ let package = Package(
 				.target(name: "DLNetwork"),
 
 				.product(name: "DLEntities", package: "dl-entities"),
-				.product(name: "DLUseCasesProtocols", package: "dl-use-cases"),
+				.product(name: "DLUseCasesProtocols", package: "dl-use-cases-protocols"),
+
+				.product(name: "NetworkUtil", package: "network-util"),
+				.product(name: "Dependencies", package: "swift-dependencies"),
+			]
+		),
+		.target(
+			name: "DLRepositoriesMocks",
+			dependencies: [
+				.target(name: "DLNetwork"),
+
+				.product(name: "DLEntities", package: "dl-entities"),
+				.product(name: "DLUseCasesProtocols", package: "dl-use-cases-protocols"),
 
 				.product(name: "NetworkUtil", package: "network-util"),
 				.product(name: "Dependencies", package: "swift-dependencies"),
