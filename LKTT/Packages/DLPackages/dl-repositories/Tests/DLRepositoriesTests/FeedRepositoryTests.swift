@@ -59,7 +59,7 @@ final class FeedRepositoryTest: XCTestCase {
 
 	func test_loadNextFragmentUrl_withCustomPhotosPerPageParam_ () async throws {
 		// Given
-		let mockNetworkController = MockNetworkController<CuratedRequest, CuratedRequest.ResponseModel>(
+		let mockNetworkController = MockNetworkController<NextCuratedRequest, CuratedRequest.ResponseModel>(
 			stubResponseModel: .stubSecondPage
 		)
 
