@@ -9,27 +9,38 @@ let package = Package(
 	],
 	products: [
 		.library(
-			name: "DLUseCasesProtocols",
+			name: "DLUseCases",
 			targets: [
-				"DLUseCasesProtocols",
-				"DLUseCasesDataProvidersProtocols",
+				"DLUseCases",
 			]
 		),
 	],
 	dependencies: [
 		.package(path: "../dl-entities"),
+		.package(path: "../dl-repositories"),
+
+		.package(url: "https://github.com/pointfreeco/swift-dependencies", exact: "1.3.0"),
 	],
 	targets: [
 		.target(
-			name: "DLUseCasesProtocols",
+			name: "DLUseCases",
 			dependencies: [
-				.product(name: "DLEntities", package: "dl-entities")
+				.product(name: "DLEntities", package: "dl-entities"),
+				.product(name: "DLRepositories", package: "dl-repositories"),
+
+				.product(name: "Dependencies", package: "swift-dependencies"),
 			]
 		),
-		.target(
-			name: "DLUseCasesDataProvidersProtocols",
+
+		.testTarget(
+			name: "DLUseCasesTests",
 			dependencies: [
-				.product(name: "DLEntities", package: "dl-entities")
+				.target(name: "DLUseCases"),
+
+				.product(name: "DLEntities", package: "dl-entities"),
+				.product(name: "DLEntitiesStubs", package: "dl-entities"),
+				.product(name: "DLRepositories", package: "dl-repositories"),
+				.product(name: "DLRepositoriesMocks", package: "dl-repositories"),
 			]
 		),
 	]
