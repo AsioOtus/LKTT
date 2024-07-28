@@ -15,7 +15,26 @@ struct FeedRepository: PFeedDataProvider {
 	@Dependency(\.networkController) var networkController
 
 	func load (photosPerPage: Int) async throws -> PhotosFragmentEntity {
-		fatalError()
+		let request = CuratedRequest(page: 1, perPage: photosPerPage)
+
+		let responseModel = try await networkController.send(request, responseModel: CuratedRequest.ResponseModel.self).model
+
+		let photosFragmentEntity = PhotosFragmentEntity(
+			page: responseModel.page,
+			photosPerPage: responseModel.perPage,
+			photos: responseModel.photos.map {
+				.init(
+					id: $0.id,
+					photographerName: $0.photographer,
+					originalUrl: $0.src.original,
+					largeUrl: $0.src.large
+				)
+			},
+			previousFragmentUrl: responseModel.prevPage,
+			nextFragmentUrl: responseModel.nextPage
+		)
+
+		return photosFragmentEntity
 	}
 
 	func load (nextFragmentUrl: URL) async throws -> PhotosFragmentEntity {
