@@ -16,10 +16,24 @@ struct FeedRepository: PFeedDataProvider {
 
 	func load (photosPerPage: Int) async throws -> PhotosFragmentEntity {
 		let request = CuratedRequest(page: 1, perPage: photosPerPage)
-
 		let responseModel = try await networkController.send(request, responseModel: CuratedRequest.ResponseModel.self).model
+		let photosFragmentEntity = map(responseModel)
 
-		let photosFragmentEntity = PhotosFragmentEntity(
+		return photosFragmentEntity
+	}
+
+	func load (nextFragmentUrl: URL) async throws -> PhotosFragmentEntity {
+		let request = NextCuratedRequest(addressUrl: nextFragmentUrl)
+		let responseModel = try await networkController.send(request, responseModel: CuratedRequest.ResponseModel.self).model
+		let photosFragmentEntity = map(responseModel)
+
+		return photosFragmentEntity
+	}
+}
+
+private extension FeedRepository {
+	func map (_ responseModel: CuratedRequest.ResponseModel) -> PhotosFragmentEntity {
+		.init(
 			page: responseModel.page,
 			photosPerPage: responseModel.perPage,
 			photos: responseModel.photos.map {
@@ -33,11 +47,5 @@ struct FeedRepository: PFeedDataProvider {
 			previousFragmentUrl: responseModel.prevPage,
 			nextFragmentUrl: responseModel.nextPage
 		)
-
-		return photosFragmentEntity
-	}
-
-	func load (nextFragmentUrl: URL) async throws -> PhotosFragmentEntity {
-		fatalError()
 	}
 }
