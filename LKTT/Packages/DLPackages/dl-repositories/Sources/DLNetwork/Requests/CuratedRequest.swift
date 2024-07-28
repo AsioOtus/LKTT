@@ -18,7 +18,7 @@ public struct CuratedRequest: Request {
 	public var query: Query {
 		[
 			"page": page.description,
-			"perPage": perPage.description
+			"per_page": perPage.description
 		]
 	}
 
