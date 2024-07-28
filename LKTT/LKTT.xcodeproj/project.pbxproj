@@ -11,6 +11,7 @@
 		3AADCB4D2C56510A00666193 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADCB4C2C56510A00666193 /* ContentView.swift */; };
 		3AADCB4F2C56510B00666193 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AADCB4E2C56510B00666193 /* Assets.xcassets */; };
 		3AADCB522C56510B00666193 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AADCB512C56510B00666193 /* Preview Assets.xcassets */; };
+		3AADCB692C56528300666193 /* dl-entities in Resources */ = {isa = PBXBuildFile; fileRef = 3AADCB682C56528300666193 /* dl-entities */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		3AADCB4C2C56510A00666193 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3AADCB4E2C56510B00666193 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AADCB512C56510B00666193 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3AADCB682C56528300666193 /* dl-entities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-entities"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +38,7 @@
 			isa = PBXGroup;
 			children = (
 				3AADCB492C56510A00666193 /* App */,
+				3AADCB592C5651FE00666193 /* Packages */,
 				3AADCB482C56510900666193 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +84,22 @@
 				3AADCB502C56510B00666193 /* Preview Content */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		3AADCB592C5651FE00666193 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				3AADCB5A2C56520200666193 /* DLPackages */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		3AADCB5A2C56520200666193 /* DLPackages */ = {
+			isa = PBXGroup;
+			children = (
+				3AADCB682C56528300666193 /* dl-entities */,
+			);
+			path = DLPackages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AADCB692C56528300666193 /* dl-entities in Resources */,
 				3AADCB522C56510B00666193 /* Preview Assets.xcassets in Resources */,
 				3AADCB4F2C56510B00666193 /* Assets.xcassets in Resources */,
 			);
