@@ -45,7 +45,7 @@ final class FeedRepositoryTest: XCTestCase {
 		let resultUrlRequest = try XCTUnwrap(mockNetworkController.resultUrlRequest)
 		let resultUrl = URLComponents(url: resultUrlRequest.url!, resolvingAgainstBaseURL: false)!
 
-		let expectedUrlRequest = URLRequest(url: .init(string: "https://api.pexels.com/v1/curated?page=1&per_page=\(perPage)")!)
+		let expectedUrlRequest = URLRequest(url: .init(string: "https://api.pexels.com/v1/curated/?page=1&per_page=\(perPage)")!)
 		let expectedUrl = URLComponents(url: expectedUrlRequest.url!, resolvingAgainstBaseURL: false)!
 
 		let resultQuery = try XCTUnwrap(resultUrl.queryItems)
