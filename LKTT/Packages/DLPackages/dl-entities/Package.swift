@@ -14,10 +14,22 @@ let package = Package(
 				"DLEntities",
 			]
 		),
+		.library(
+			name: "DLEntitiesStubs",
+			targets: [
+				"DLEntitiesStubs",
+			]
+		),
 	],
 	targets: [
 		.target(
 			name: "DLEntities"
 		),
+		.target(
+			name: "DLEntitiesStubs",
+			dependencies: [
+				.target(name: "DLEntities")
+			]
+		)
 	]
 )
