@@ -57,7 +57,7 @@ extension CuratedRequest {
 			self.prevPage = prevPage
 		}
 
-		public enum CodingKey: String {
+		public enum CodingKeys: String, CodingKey {
 			case page
 			case perPage = "per_page"
 			case photos
