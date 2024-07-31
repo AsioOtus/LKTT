@@ -6,22 +6,25 @@
 //
 
 import Dependencies
+import DLLogic
+import Foundation
 import NetworkUtil
 
 public enum NetworkControllerDependencyKey: DependencyKey {
-	public static var liveValue: any NetworkController {
+	public static var liveValue: any FullScaleNetworkController {
 		StandardNetworkController(
 			configuration: .init(
-				scheme: "https",
 				address: "api.pexels.com",
-				baseSubpath: "v1/curated"
+				headers: [
+					"Authorization": Bundle.main.pexelsToken
+				]
 			)
 		)
 	}
 }
 
 public extension DependencyValues {
-	var networkController: any NetworkController {
+	var networkController: any FullScaleNetworkController {
 		get { self[NetworkControllerDependencyKey.self] }
 		set { self[NetworkControllerDependencyKey.self] = newValue }
 	}

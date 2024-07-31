@@ -15,11 +15,24 @@ import DLUseCasesProtocols
 public struct FeedFetchingUseCase: PFeedFetchingUseCase {
 	@Dependency(\.feedDataProvider) var feedDataProvider
 
-	public func fetchPhotosFragment (perPage: Int = 10) async throws -> PhotosFragmentEntity {
+	public func fetchPhotosFragment (perPage: Int = 15) async throws -> PhotosFragmentEntity {
 		try await feedDataProvider.load(photosPerPage: perPage)
 	}
 
 	public func fetchPhotosFragment (nextFragmentUrl: URL) async throws -> PhotosFragmentEntity {
 		try await feedDataProvider.load(nextFragmentUrl: nextFragmentUrl)
+	}
+}
+
+enum FeedFetchingUseCaseDependencyKey: DependencyKey {
+	public static var liveValue: any PFeedFetchingUseCase {
+		FeedFetchingUseCase()
+	}
+}
+
+public extension DependencyValues {
+	var feedFetchingUseCase: any PFeedFetchingUseCase {
+		get { self[FeedFetchingUseCaseDependencyKey.self] }
+		set { self[FeedFetchingUseCaseDependencyKey.self] = newValue }
 	}
 }
