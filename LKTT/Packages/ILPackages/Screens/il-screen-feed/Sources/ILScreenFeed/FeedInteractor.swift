@@ -59,6 +59,7 @@ extension FeedInteractor {
 
 	func reload () async {
 		lastLoadedFragment = nil
+		currentFragment.value.cancel()
 		loadFirstFragment()
 	}
 }

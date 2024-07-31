@@ -80,7 +80,7 @@ private extension FeedVM {
 					.map({
 						PhotoModel(
 							id: $0.id,
-							photographerName: $0.photographerName,
+							photographerName: $0.photographerName + $0.id.description,
 							largeUrl: $0.largeUrl,
 							originalUrl: $0.originalUrl
 						)
@@ -108,7 +108,9 @@ private extension FeedVM {
 
 	func reload () {
 		Task { @MainActor in
-			dataSource?.apply(.init(), animatingDifferences: true)
+			guard var snapshot = dataSource?.snapshot() else { return }
+			snapshot.deleteAllItems()
+			dataSource?.apply(snapshot, animatingDifferences: true)
 		}
 
 		Task {

@@ -27,9 +27,13 @@ public extension FeedCVC {
 		vm.currentFragmentRequestState
 			.receive(on: DispatchQueue.main)
 			.sink { [weak self] in
-				if $0.isLoading {
-					self?.collectionView.refreshControl?.endRefreshing()
-				}
+				guard
+					$0.isLoading,
+					let refreshControl = self?.collectionView.refreshControl,
+					refreshControl.isRefreshing
+				else { return }
+
+				refreshControl.endRefreshing()
 			}
 			.store(in: &subscriptions)
 

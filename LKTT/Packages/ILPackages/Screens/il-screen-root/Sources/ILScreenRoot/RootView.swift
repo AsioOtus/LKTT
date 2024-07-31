@@ -6,6 +6,7 @@
 //
 
 import ILScreenFeed
+import ILScreenPhotoDetails
 import SwiftUI
 
 public struct RootView: View {
@@ -31,7 +32,16 @@ public struct RootView: View {
 			.ignoresSafeArea()
 			.tint(.cyan)
 			.sheet(isPresented: isPresentedPhotoUrlActive) {
-				Text(presentedPhotoUrl?.absoluteString ?? "")
+				photoDetailsView()
 			}
+	}
+}
+
+private extension RootView {
+	@ViewBuilder
+	func photoDetailsView () -> some View {
+		if let url = presentedPhotoUrl {
+			PhotoDetailsView(url: url)
+		}
 	}
 }

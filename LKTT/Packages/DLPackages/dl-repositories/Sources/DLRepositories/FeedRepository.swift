@@ -19,6 +19,8 @@ struct FeedRepository: PFeedDataProvider {
 		let responseModel = try await networkController.send(request, responseModel: CuratedRequest.ResponseModel.self).model
 		let photosFragmentEntity = map(responseModel)
 
+		print("QWE.1", photosFragmentEntity.photos.map(\.id))
+
 		return photosFragmentEntity
 	}
 
@@ -26,6 +28,8 @@ struct FeedRepository: PFeedDataProvider {
 		let request = NextCuratedRequest(addressUrl: nextFragmentUrl)
 		let responseModel = try await networkController.send(request, responseModel: CuratedRequest.ResponseModel.self).model
 		let photosFragmentEntity = map(responseModel)
+
+		print("QWE.2", photosFragmentEntity.photos.map(\.id))
 
 		return photosFragmentEntity
 	}

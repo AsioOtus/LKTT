@@ -23,6 +23,7 @@
 		3A43AFCF2C5A4DF0006A9B40 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		3A59F6022C56874B00118B9D /* il-screen-feed */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-screen-feed"; sourceTree = "<group>"; };
 		3A59F6032C56877F00118B9D /* il-screen-root */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-screen-root"; sourceTree = "<group>"; };
+		3A97DF8E2C5A5CEB00796185 /* il-screen-photo-details */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-screen-photo-details"; sourceTree = "<group>"; };
 		3A999F142C5653DD00E9F408 /* dl-use-cases */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-use-cases"; sourceTree = "<group>"; };
 		3A999F172C5658F500E9F408 /* dl-repositories */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-repositories"; sourceTree = "<group>"; };
 		3AADCB472C56510900666193 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +58,7 @@
 		3A59F5FD2C5685EA00118B9D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				3A97DF8E2C5A5CEB00796185 /* il-screen-photo-details */,
 				3A59F6022C56874B00118B9D /* il-screen-feed */,
 				3A59F6032C56877F00118B9D /* il-screen-root */,
 			);

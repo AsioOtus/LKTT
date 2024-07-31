@@ -14,7 +14,7 @@ public enum NetworkControllerDependencyKey: DependencyKey {
 	public static var liveValue: any FullScaleNetworkController {
 		StandardNetworkController(
 			configuration: .init(
-				address: "api.pexels.com",
+				address: "",
 				headers: [
 					"Authorization": Bundle.main.pexelsToken
 				]

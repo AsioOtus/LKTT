@@ -18,9 +18,7 @@ struct LKTTApp: App {
 	init () {
 		Task { [self] in
 			for await log in networkController.logs {
-				if let url = log.message.urlRequest?.url {
-					print(url)
-				}
+				dump(log)
 			}
 		}
 
