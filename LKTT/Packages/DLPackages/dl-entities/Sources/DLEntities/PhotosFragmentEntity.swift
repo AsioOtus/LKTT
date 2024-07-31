@@ -14,6 +14,9 @@ public struct PhotosFragmentEntity: Equatable {
 	public let previousFragmentUrl: URL?
 	public let nextFragmentUrl: URL?
 
+	public var isFirst: Bool { previousFragmentUrl == nil }
+	public var isLast: Bool { nextFragmentUrl == nil }
+
 	public init (
 		page: Int,
 		photosPerPage: Int,

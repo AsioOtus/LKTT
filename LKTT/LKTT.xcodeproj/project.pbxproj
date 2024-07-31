@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3AADCB4B2C56510A00666193 /* AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADCB4A2C56510A00666193 /* AppApp.swift */; };
-		3AADCB4D2C56510A00666193 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADCB4C2C56510A00666193 /* ContentView.swift */; };
+		3A59F6012C5686F500118B9D /* ILScreenRoot in Frameworks */ = {isa = PBXBuildFile; productRef = 3A59F6002C5686F500118B9D /* ILScreenRoot */; };
+		3A59F6052C569BB300118B9D /* ILScreenFeed in Frameworks */ = {isa = PBXBuildFile; productRef = 3A59F6042C569BB300118B9D /* ILScreenFeed */; };
+		3A59F6072C569E2F00118B9D /* DLNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 3A59F6062C569E2F00118B9D /* DLNetwork */; };
+		3AADCB4B2C56510A00666193 /* LKTTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADCB4A2C56510A00666193 /* LKTTApp.swift */; };
 		3AADCB4F2C56510B00666193 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AADCB4E2C56510B00666193 /* Assets.xcassets */; };
 		3AADCB522C56510B00666193 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AADCB512C56510B00666193 /* Preview Assets.xcassets */; };
 		3AADCB692C56528300666193 /* dl-entities in Resources */ = {isa = PBXBuildFile; fileRef = 3AADCB682C56528300666193 /* dl-entities */; };
@@ -16,11 +18,15 @@
 
 /* Begin PBXFileReference section */
 		3A3A91442C5679470064F335 /* dl-use-cases-protocols */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-use-cases-protocols"; sourceTree = "<group>"; };
+		3A43AFCB2C5A4B60006A9B40 /* dl-logic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-logic"; sourceTree = "<group>"; };
+		3A43AFCC2C5A4C10006A9B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3A43AFCF2C5A4DF0006A9B40 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		3A59F6022C56874B00118B9D /* il-screen-feed */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-screen-feed"; sourceTree = "<group>"; };
+		3A59F6032C56877F00118B9D /* il-screen-root */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-screen-root"; sourceTree = "<group>"; };
 		3A999F142C5653DD00E9F408 /* dl-use-cases */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-use-cases"; sourceTree = "<group>"; };
 		3A999F172C5658F500E9F408 /* dl-repositories */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-repositories"; sourceTree = "<group>"; };
 		3AADCB472C56510900666193 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AADCB4A2C56510A00666193 /* AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppApp.swift; sourceTree = "<group>"; };
-		3AADCB4C2C56510A00666193 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3AADCB4A2C56510A00666193 /* LKTTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LKTTApp.swift; sourceTree = "<group>"; };
 		3AADCB4E2C56510B00666193 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AADCB512C56510B00666193 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3AADCB682C56528300666193 /* dl-entities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-entities"; sourceTree = "<group>"; };
@@ -31,18 +37,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A59F6072C569E2F00118B9D /* DLNetwork in Frameworks */,
+				3A59F6012C5686F500118B9D /* ILScreenRoot in Frameworks */,
+				3A59F6052C569BB300118B9D /* ILScreenFeed in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A59F5FC2C5685E300118B9D /* ILPackages */ = {
+			isa = PBXGroup;
+			children = (
+				3A59F5FD2C5685EA00118B9D /* Screens */,
+			);
+			path = ILPackages;
+			sourceTree = "<group>";
+		};
+		3A59F5FD2C5685EA00118B9D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3A59F6022C56874B00118B9D /* il-screen-feed */,
+				3A59F6032C56877F00118B9D /* il-screen-root */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		3A59F5FF2C5686F500118B9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3AADCB3C2C5650FC00666193 = {
 			isa = PBXGroup;
 			children = (
 				3AADCB492C56510A00666193 /* App */,
 				3AADCB592C5651FE00666193 /* Packages */,
 				3AADCB482C56510900666193 /* Products */,
+				3A59F5FF2C5686F500118B9D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +91,7 @@
 		3AADCB492C56510A00666193 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				3A43AFCC2C5A4C10006A9B40 /* Info.plist */,
 				3AADCB582C56511D00666193 /* Resources */,
 				3AADCB572C56511800666193 /* Sources */,
 			);
@@ -74,8 +109,7 @@
 		3AADCB572C56511800666193 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				3AADCB4A2C56510A00666193 /* AppApp.swift */,
-				3AADCB4C2C56510A00666193 /* ContentView.swift */,
+				3AADCB4A2C56510A00666193 /* LKTTApp.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -85,6 +119,7 @@
 			children = (
 				3AADCB4E2C56510B00666193 /* Assets.xcassets */,
 				3AADCB502C56510B00666193 /* Preview Content */,
+				3A43AFCF2C5A4DF0006A9B40 /* Debug.xcconfig */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -93,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				3AADCB5A2C56520200666193 /* DLPackages */,
+				3A59F5FC2C5685E300118B9D /* ILPackages */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -100,6 +136,7 @@
 		3AADCB5A2C56520200666193 /* DLPackages */ = {
 			isa = PBXGroup;
 			children = (
+				3A43AFCB2C5A4B60006A9B40 /* dl-logic */,
 				3AADCB682C56528300666193 /* dl-entities */,
 				3A999F142C5653DD00E9F408 /* dl-use-cases */,
 				3A3A91442C5679470064F335 /* dl-use-cases-protocols */,
@@ -124,6 +161,11 @@
 			dependencies = (
 			);
 			name = App;
+			packageProductDependencies = (
+				3A59F6002C5686F500118B9D /* ILScreenRoot */,
+				3A59F6042C569BB300118B9D /* ILScreenFeed */,
+				3A59F6062C569E2F00118B9D /* DLNetwork */,
+			);
 			productName = App;
 			productReference = 3AADCB472C56510900666193 /* App.app */;
 			productType = "com.apple.product-type.application";
@@ -179,8 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AADCB4D2C56510A00666193 /* ContentView.swift in Sources */,
-				3AADCB4B2C56510A00666193 /* AppApp.swift in Sources */,
+				3AADCB4B2C56510A00666193 /* LKTTApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +230,7 @@
 /* Begin XCBuildConfiguration section */
 		3AADCB412C5650FC00666193 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A43AFCF2C5A4DF0006A9B40 /* Debug.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
@@ -259,12 +301,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LKTT;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,12 +383,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LKTT;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,6 +432,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A59F6002C5686F500118B9D /* ILScreenRoot */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ILScreenRoot;
+		};
+		3A59F6042C569BB300118B9D /* ILScreenFeed */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ILScreenFeed;
+		};
+		3A59F6062C569E2F00118B9D /* DLNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DLNetwork;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3AADCB3D2C5650FC00666193 /* Project object */;
 }
